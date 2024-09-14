@@ -40,4 +40,5 @@ dismissBtn.addEventListener('click', function(){
     signup_card.style.display = "flex";
     success_box.style.display = "none";
     errorMessage.style.display = "none";
+    inputBox.value = "";
 })
