@@ -4,8 +4,8 @@ const subscriptionForm = document.getElementById('form');
 const submitBtn = document.getElementById('submit');
 const dismissBtn = document.getElementById('clear-btn');
 const errorMessage = document.getElementById('email-error');
+const confirmEmail = document.getElementById('confirm_email');
 const inputBox = document.getElementById('email');
-const failInput = document.querySelector('.fail')
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,12 +23,12 @@ const handleSubmit = (e) => {
     if (!data.email || !emailPattern.test(data.email)) {
         isValid = false;
         errorMessage.style.display = "block";
-        // inputBox.style.background = "hsl(4, 100%, 67%)";
-        // // inputBox.style.border = "hsl(340, 94%, 51%)";
+        inputBox.style.borderColor = "hsl(340, 94%, 51%)";
 
     } if(isValid) {   
         signup_card.style.display = "none";
         success_box.style.display = "flex";
+        confirm_email.textContent = `${data.email}`;
     }
 
 
